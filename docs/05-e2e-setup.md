@@ -21,6 +21,13 @@ npm run test:e2e
 npm run test:e2e:ui
 ```
 
+## GitHub Actions
+- ワークフロー: `.github/workflows/e2e.yml`
+- トリガー: `main` への push と PR
+- 実行ディレクトリ: `front/`
+- 実行内容: `npm ci` → `npx playwright install --with-deps` → `npm run test:e2e`
+- 成果物: `front/playwright-report/` と `front/test-results/` をアップロード（常に）
+
 ## 注意点
 - テストは LocalStorage をクリアして開始します。
 - 既存で `npm run dev` が動いている場合は再利用されます。
